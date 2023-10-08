@@ -1,7 +1,16 @@
 
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleSignOut =() =>{
+    logOut()
+    .then()
+    .catch()
+  }
     return (
       
 
@@ -20,12 +29,7 @@ const Navbar = () => {
         <NavLink to="/Services" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}> Services</NavLink>
     </li>
 
-    <li>
-        <NavLink to="/Login" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}> Login</NavLink>
-    </li>
-    <li>
-        <NavLink to="/Register" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}> Register</NavLink>
-    </li>
+   
     </ul>
   </div>
   <a className="font-extrabold text-white upper-case text-xl">EVENTz</a>
@@ -38,8 +42,9 @@ const Navbar = () => {
                <NavLink
  to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? " text-bold underline underline-offset-8" : "" }> Home</NavLink>        </li>
                <li>  <NavLink to="/Contactus" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? " text-bold  underline underline-offset-8" : ""}>Contact</NavLink>     </li>
+               
 
-               <li> <NavLink to="/Login" className={({ isActive, isPending }) =>  isPending ? "pending" : isActive ? " text-bold underline  underline-offset-8" : ""} >Login</NavLink>   </li>
+
                
            </ul>
            
@@ -47,9 +52,21 @@ const Navbar = () => {
         </div>
 <div className="navbar-end">
  
-  <Link className="btn rounded-none bg-[#702632] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]" to="/Register">Register</Link>
+<div className="flex">
+ <div>
+  {
+    user ?
+    <button onClick={handleSignOut} className=" my-2 mx-2 btn rounded-none bg-[#702632] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]">Sign Out</button>
+  :
+  <Link className=" my-2 mx-2 btn rounded-none bg-[#702632] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]" to="/Login">Login</Link>
+  }
+ </div>
+
+  <div><Link className=" my-2 mx-2 btn rounded-none bg-[#702632] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]" to="/Register">Register</Link></div>
 </div>
 </div>
+</div>
+
     );
 };
 

@@ -1,9 +1,10 @@
-{
-    "services": [
+
+     [
       {
-        "id": 1,
+        "id": "1",
         "name": "Wedding Wonderland",
-        "image": "wedding_image.jpg",
+        "image": "https://i.ibb.co/jZGBPb8/unsplash-w-4.jpg",
+        "subtitle": "Crafting Fairy Tale Moments",
         "price": "$2000 and up",
         "description": "Create the fairy tale wedding you've always dreamed of. From venue selection to the last dance, we've got you covered.",
         "button": "Get a Quote"
@@ -11,7 +12,8 @@
       {
         "id": 2,
         "name": "Birthday Bash Bonanza",
-        "image": "birthday_image.jpg",
+        "image": "https://i.ibb.co/6R8rPR6/birthday-1.jpg",
+        "subtitle": "Turning Birthdays into Spectacular Celebrations",
         "price": "$500 and up",
         "description": "Celebrate another trip around the sun in style! Customized themes, entertainment, and more.",
         "button": "Get a Quote"
@@ -19,7 +21,8 @@
       {
         "id": 3,
         "name": "Anniversary Affair",
-        "image": "anniversary_image.jpg",
+        "image": "https://i.ibb.co/bKzM6sV/unsplash-e-2.jpg",
+        "subtitle": "Rekindling Love, Celebrating Milestones",
         "price": "$1000 and up",
         "description": "Rekindle the romance and celebrate the years together. We'll make your anniversary unforgettable.",
         "button": "Get a Quote"
@@ -27,7 +30,8 @@
       {
         "id": 4,
         "name": "Engagement Extravaganza",
-        "image": "engagement_image.jpg",
+        "image": "https://i.ibb.co/gmBk78K/unsplash-w-1.jpg",
+        "subtitle": "Designing the Perfect Prelude to Forever",
         "price": "$1500 and up",
         "description": "Kick off your journey to forever with a celebration that reflects your love story. We handle the details; you enjoy the moment.",
         "button": "Get a Quote"
@@ -35,7 +39,8 @@
       {
         "id": 5,
         "name": "Retirement Rendezvous",
-        "image": "retirement_image.jpg",
+        "image": "https://i.ibb.co/gmQ9sBY/2.jpg",
+        "subtitle": "Cheers to New Beginnings and Happy Retirements",
         "price": "$800 and up",
         "description": "Cheers to new beginnings! Let's create a retirement party that captures a lifetime of achievements and sets the stage for the next adventure.",
         "button": "Get a Quote"
@@ -43,11 +48,11 @@
       {
         "id": 6,
         "name": "Baby Bliss Bash",
-        "image": "baby_shower_image.jpg",
+        "image": "https://i.ibb.co/4Fspqvj/baby-shower-334919-800x.jpg",
+        "subtitle": "Welcoming the Sweetest Addition to Your Family",
         "price": "$600 and up",
         "description": "Welcome the newest addition to your family with a joyous and beautifully crafted baby shower. It's a day filled with love and laughter.",
         "button": "Get a Quote"
       }
     ]
-  }
   

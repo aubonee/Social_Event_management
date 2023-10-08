@@ -4,6 +4,7 @@ import React from 'react'
 import Home from '../pages/home/Home';
 import Login from '../pages/login/login';
 import Register from '../pages/register/Register';
+import ServiceDetail from '../components/serviceDetail/ServiceDetail'
         
 const router = createBrowserRouter([
     {
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
           path: "/Register",
           element: <Register></Register>,
         },
+        {
+            path :"/Service/:id",
+            element : <ServiceDetail></ServiceDetail>,
+            loader : ()=> fetch('/service.json')
+        }
   
       ]
     },
