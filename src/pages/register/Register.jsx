@@ -21,6 +21,11 @@ const Register = () => {
         console.log(name, photourl,email,password);
         setRegisterError('')
 
+        if(!/^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z0-9!@#$%^&*(),.?":{}|<>]{6,}$/.test(password)){
+          setRegisterError('password invalid');
+          return;
+
+        }
 
       //  create user
         createUser(email,password)
@@ -87,15 +92,17 @@ const Register = () => {
           <span className="label-text">Password</span>
         </label>
         <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+        {
+      registerError && <p className='text-red-600 p-3'>{registerError}</p> }
        
       </div>
       <div className="form-control mt-6">
         <button className="btn bg-[#702632] text-white">Register</button>
+      
         <div className='flex items-center justify-center my-2'><GoogleLogin ></GoogleLogin></div>
       </div>
     </form>
-    {
-      registerError && <p className='text-red-600 p-3'>{registerError}</p> }
+   
     <div className='mx-auto text-center my-5'><p>Already have an account?</p>  <span className='font-bold text-[#702632]'> <Link to="/Login">Login</Link></span></div>
   </div>
 </div>
