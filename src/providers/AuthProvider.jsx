@@ -1,31 +1,58 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth,signInWithPopup ,onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
-import auth from "../firebase/firebase.config";
+import app from "../firebase/firebase.config";
+import { useLocation } from 'react-router-dom';
 
 
 export const AuthContext = createContext(null);
 
 
+import { GoogleAuthProvider } from "firebase/auth";
 
 const AuthProvider = ({children}) => {
+    const auth =getAuth(app)
     
     const[user,setUser] =useState(null);
+    const [loading ,setloading]=useState(true)
 
     const createUser =(email, password) =>{
+        setloading(true);
              return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const signIn=(email, password) =>{
+        setloading(true);
         return signInWithEmailAndPassword(auth,email,password);    }
     
+        
+       
+        const googleSignIn=() =>{
+            const provider = new GoogleAuthProvider();
+           
+            // .then((result) => {
+                
+            //     const loggedInUser = result.user;
+            //     console.log(loggedInUser);
+            //     setUser(loggedInUser);
+              
+            //   })
+            //   .catch((error) => {
+            //     console.error(error);
+            // });
+            setloading(true);
+            return      signInWithPopup (auth, provider)  }
+        
     const logOut =()=>{
+        setloading(true);
         return signOut(auth);
     }
     useEffect(()=>{
     const  unSubscribe =  onAuthStateChanged(auth,currentUser => {
-           console.log('user in', currentUser)
+           console.log('auth state changed', currentUser)
            setUser(currentUser);
+           setloading(false);
+
       });
       return () =>{
         unSubscribe ();
@@ -35,7 +62,7 @@ const AuthProvider = ({children}) => {
     }, [])
 
     const authInfo ={
-        user, createUser,signIn,logOut
+        user, loading, createUser,googleSignIn,signIn,logOut
     }
     return (
         

@@ -5,18 +5,27 @@ import Home from '../pages/home/Home';
 import Login from '../pages/login/login';
 import Register from '../pages/register/Register';
 import ServiceDetail from '../components/serviceDetail/ServiceDetail'
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/error/ErrorPage";
+import Contact from "../pages/contact/Contact";
+import WhyChooseUs from "./whyChooseUs/WhyChooseUs";
+import Blogs from "../pages/blog/Blogs";
         
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Mainlayout></Mainlayout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children:[
         {
           path: "/",
           element: <Home></Home>,
           loader : ()=> fetch('/service.json'),
         },
-  
+        {
+          path: "/Contact",
+          element: <PrivateRoute><Contact></Contact></PrivateRoute>,
+        },
         {
           path: "/Login",
           element: <Login></Login>,
@@ -26,10 +35,20 @@ const router = createBrowserRouter([
           element: <Register></Register>,
         },
         {
-            path :"/Service/:id",
-            element : <ServiceDetail></ServiceDetail>,
-            loader : ()=> fetch('/service.json')
-        }
+            path :"/service/:id",
+            element : <PrivateRoute><ServiceDetail></ServiceDetail></PrivateRoute>,
+            loader : ()=> fetch('/service.json'),
+        },
+        {
+          path: "/WhyChooseUs",
+          element: <WhyChooseUs></WhyChooseUs>,
+         // loader : ()=> fetch('/whychoose.json'),
+        },
+        {
+          path: "/Blogs",
+          element: <Blogs></Blogs>,
+         
+        },
   
       ]
     },

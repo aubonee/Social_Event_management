@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "point": "Experience and Expertise",
+      "description": "Our seasoned team of event planners brings years of collective expertise to ensure your celebration is nothing short of spectacular. From weddings to birthdays, we've mastered the art of crafting unforgettable moments."
+    },
+    {
+      "id": 2,
+      "point": "Vendor Quality",
+      "description": "We curate a selection of top-tier vendors, each carefully vetted for quality and reliability. Expect nothing but excellence when you choose from our network of trusted partners."
+    },
+    {
+      "id": 3,
+      "point": "User-Friendly Platform",
+      "description": "Navigating the intricacies of event planning should be a joy, not a hassle. Our user-friendly platform is designed with your ease in mind, making the planning process smooth and enjoyable."
+    },
+    {
+      "id": 4,
+      "point": "Comprehensive Planning Tools",
+      "description": "Dive into a suite of comprehensive planning tools that empower you to orchestrate every detail of your event. From checklists to budgeting, we've got your organizational needs covered."
+    },
+    {
+      "id": 5,
+      "point": "Exclusive Vendor Deals",
+      "description": "Unlock exclusive deals and special discounts with our partnered vendors. Your celebration becomes not only memorable but also cost-effective with our unique offerings."
+    },
+    {
+      "id": 6,
+      "point": "Personalization Options",
+      "description": "We understand that every event is as unique as you are. Our platform provides robust personalization options, allowing you to tailor every aspect of your celebration to reflect your distinct style and preferences."
+    },
+    {
+      "id": 7,
+      "point": "Customer Support",
+      "description": "Your peace of mind is our priority. Our responsive and knowledgeable customer support team is here to assist you at every step, ensuring a stress-free experience from start to finish."
+    },
+    {
+      "id": 8,
+      "point": "Security and Privacy",
+      "description": "Trust is paramount. Rest assured with our secure transactions and a commitment to keeping your personal information confidential. Your privacy is as important to us as your celebration."
+    },
+    {
+      "id": 9,
+      "point": "Success Stories/Testimonials",
+      "description": "Don't just take our word for it—read the success stories and heartfelt testimonials from our delighted customers. Join the ranks of those who've experienced the magic of seamless, unforgettable events with us."
+    },
+    {
+      "id": 10,
+      "point": "Innovative Features",
+      "description": "Discover a range of innovative features that set us apart in the world of event planning. We're dedicated to staying ahead of the curve, bringing you the latest tools and technologies to enhance your planning experience."
+    },
+    {
+      "id": 11,
+      "point": "Transparent Pricing",
+      "description": "No hidden costs, no surprises. We believe in transparent pricing to build trust and confidence. Know exactly where your budget is going as you plan the celebration of a lifetime."
+    }
+  ]

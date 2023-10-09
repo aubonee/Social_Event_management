@@ -2,15 +2,24 @@ import React from 'react';
 import Banner from '../../components/header/Banner';
 import Services from '../../components/services/Services';
 import { useLoaderData } from 'react-router-dom';
+import WhyChooseUs from '../../components/whyChooseUs/WhyChooseUs';
+import Review from '../../components/Reviews/Review';
 
 
 
 const Home = () => {
     const services = useLoaderData()
     return (
-        <div>
+        <div  data-aos="fade-up">
+             
             <Banner></Banner>
             <Services services ={services}></Services>
+
+            <Review></Review>
+            <WhyChooseUs></WhyChooseUs>
+           
+       
+            
          </div>
     );
 };

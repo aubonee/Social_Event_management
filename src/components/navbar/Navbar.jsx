@@ -1,11 +1,13 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext);
+   
 
+   
   const handleSignOut =() =>{
     logOut()
     .then()
@@ -26,7 +28,7 @@ const Navbar = () => {
     </li>
 
     <li>
-        <NavLink to="/Services" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}> Services</NavLink>
+        <NavLink to="/Contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}> Contact</NavLink>
     </li>
 
    
@@ -41,7 +43,7 @@ const Navbar = () => {
                <li>
                <NavLink
  to="/" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? " text-bold underline underline-offset-8" : "" }> Home</NavLink>        </li>
-               <li>  <NavLink to="/Contactus" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? " text-bold  underline underline-offset-8" : ""}>Contact</NavLink>     </li>
+               <li>  <NavLink to="/Contact" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "text-bold underline underline-offset-8" : ""}>Contact</NavLink></li>
                
 
 
@@ -54,6 +56,13 @@ const Navbar = () => {
  
 <div className="flex">
  <div>
+ {/* {
+        user && <div>
+            <h1>{user?.displaName}</h1>
+            console.log(user?.displaName);
+           <h1>tahsin</h1>
+            </div>
+       } */}
   {
     user ?
     <button onClick={handleSignOut} className=" my-2 mx-2 btn rounded-none bg-[#702632] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]">Sign Out</button>
@@ -62,7 +71,7 @@ const Navbar = () => {
   }
  </div>
 
-  <div><Link className=" my-2 mx-2 btn rounded-none bg-[#702632] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]" to="/Register">Register</Link></div>
+  {/* <div><Link className=" my-2 mx-2 btn rounded-none bg-[#702632] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]" to="/Register">Register</Link></div> */}
 </div>
 </div>
 </div>

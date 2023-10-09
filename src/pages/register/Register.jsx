@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
-
+import GoogleLogin from '../login/googleLogin';
+import Swal from 'sweetalert2';
 const Register = () => {
-        
+        const [registerError,setRegisterError]=useState('');
     const {createUser} =useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(' register page', location);
 
     const handleRegister = e =>{
         e.preventDefault();
@@ -15,34 +19,52 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(name, photourl,email,password);
+        setRegisterError('')
 
 
       //  create user
         createUser(email,password)
         .then(result=>{
+           // navigate after login
+           navigate(location?.state ? location.state : '/');
             console.log(result.user)
+            console.log(result.user)
+            Swal.fire({
+             icon: 'success',
+             title: 'Registration  Succesful',
+             showConfirmButton: false,
+             timer: 1500
+           })
+
         })
         .catch(error=>{
           console.error(error)
-        }
-        )
+          setRegisterError(error.message);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Unsuccesful Registration',
+           
+          })
+        
+        } )
 
 }
     return (
-        <div>
+        <div className='w-full'> 
              <div>
           
        <div><h2 className='text-center'> </h2></div>
 
-          <div className="hero min-h-screen bg-base-200">
-<div className="hero-content flex-col lg:flex-row-reverse">
+          <div className="hero w-full min-h-screen bg-base-200">
+<div className="hero-content flex-col ">
   <div className="text-center lg:text-left">
-    <h1 className="text-5xl font-bold">Register now!</h1>
-    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+    <h1 className="text-5xl font-bold text-[#702632]">Register now!</h1>
+   
   </div>
-  <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+  <div className="card mx-24 flex-shrink-0 w-full  shadow-2xl bg-base-100">
     <form onSubmit={handleRegister}  className="card-body">
-    <div className="form-control">
+    <div className="form-control ">
         <label className="label">
           <span className="label-text">Full Name</span>
         </label>
@@ -68,14 +90,18 @@ const Register = () => {
        
       </div>
       <div className="form-control mt-6">
-        <button className="btn btn-primary">Register</button>
+        <button className="btn bg-[#702632] text-white">Register</button>
+        <div className='flex items-center justify-center my-2'><GoogleLogin ></GoogleLogin></div>
       </div>
     </form>
-    <div className='mx-auto text-center my-5'><p>Already have an account?</p> <Link to="/Login">Login</Link></div>
+    {
+      registerError && <p className='text-red-600 p-3'>{registerError}</p> }
+    <div className='mx-auto text-center my-5'><p>Already have an account?</p>  <span className='font-bold text-[#702632]'> <Link to="/Login">Login</Link></span></div>
   </div>
 </div>
 </div>
       </div>
+
         </div>
     );
 };

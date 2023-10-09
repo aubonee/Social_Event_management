@@ -1,9 +1,19 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import GoogleLogin from './googleLogin';
+import Swal from 'sweetalert2';
 
 const login = () => {
+
+  const[user,setUser] =useState(null); 
+
   const {signIn} =useContext(AuthContext);
+  const location = useLocation();
+    const navigate = useNavigate();
+    console.log(' login page', location);
+
+
 
     const handleLogin = e =>{
                e.preventDefault();
@@ -15,25 +25,38 @@ const login = () => {
             
              .then(result=>{
                  console.log(result.user)
+                 Swal.fire({
+                  icon: 'success',
+                  title: 'Login Succesful',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+                   
+                // navigate after login
+                navigate(location?.state ? location.state : '/');
              })
              .catch(error=>{
                console.error(error)
+               Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+               
+              })
              }
              )
     }
     return (
-        <div>
-          
-            login
-
-            <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className=' flex flex-col justify-center items-center'>
+   
+            <div className="hero min-h-screen ">
+  <div className="hero-content flex-col ">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <h1 className="text-5xl text-[#702632] font-bold text-center">Login now!</h1>
+  
     </div>
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form  onSubmit={handleLogin} className="card-body">
+    <div className="card mx-24 flex-shrink-0 w-full  shadow-2xl bg-base-100">
+      <form  onSubmit={handleLogin} className="card-body ">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -48,13 +71,23 @@ const login = () => {
          
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn bg-[#702632] text-white">Login</button>
+          
         </div>
       </form>
-      <div><p>Dont have an account?</p> <Link to="/register">Register</Link></div>
+      <div className='text-center mb-5'><p>Dont have an account?</p> <span className='text-[#702632] font-bold'> <Link to="/register">Register</Link></span> </div>
     </div>
   </div>
 </div>
+
+{/* {
+        userdata && <div>
+            <h1>{userdata?.displaName}</h1>
+           
+            </div>
+       } */}
+
+
         </div>
     );
 };
