@@ -8,9 +8,6 @@ const ServiceDetailCard = ({detail}) => {
 
     return (
         <div>
-          
-           
-            <h2>{id}</h2>
             <div>
             <div className='mx-auto mt-5 w-5/6'>
                <div className='w-full h-max-[90vh] lg:h-[90vh] flex flex-col justify-center  ' > 

@@ -74,6 +74,8 @@ const login = () => {
         </div>
         <div className="form-control mt-6">
           <button className="btn bg-[#702632] text-white">Login</button>
+
+          <div className='flex items-center justify-center my-2'><GoogleLogin ></GoogleLogin></div>
           
         </div>
       </form>

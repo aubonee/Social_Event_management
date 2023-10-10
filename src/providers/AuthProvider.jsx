@@ -15,15 +15,24 @@ const AuthProvider = ({children}) => {
     
     const[user,setUser] =useState(null);
     const [loading ,setloading]=useState(true)
+    
 
     const createUser =(email, password) =>{
         setloading(true);
-             return createUserWithEmailAndPassword(auth, email, password);
-    }
+     
+    return createUserWithEmailAndPassword(auth, email, password)
+   
+}
+const updateProfile=(auth.currentUser,{ 
+    displayName: "name",photoURL :"photourl"
+
+})
+    
 
     const signIn=(email, password) =>{
         setloading(true);
-        return signInWithEmailAndPassword(auth,email,password);    }
+        return signInWithEmailAndPassword(auth,email,password);  
+      }
     
         
        
@@ -62,7 +71,7 @@ const AuthProvider = ({children}) => {
     }, [])
 
     const authInfo ={
-        user, loading, createUser,googleSignIn,signIn,logOut
+        user, loading, createUser,updateProfile,googleSignIn,signIn,logOut
     }
     return (
         

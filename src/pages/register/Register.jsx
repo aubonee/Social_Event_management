@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import GoogleLogin from '../login/googleLogin';
 import Swal from 'sweetalert2';
+import { updateProfile } from 'firebase/auth';
 const Register = () => {
         const [registerError,setRegisterError]=useState('');
     const {createUser} =useContext(AuthContext);
@@ -28,31 +29,48 @@ const Register = () => {
         }
 
       //  create user
-        createUser(email,password)
-        .then(result=>{
+      //   createUser(email,password)
+       //  updateProfile(name, photourl)
+      //  createUser(email,password,name,photourl)
+       // .then((result)=>{
            // navigate after login
-           navigate(location?.state ? location.state : '/');
-            console.log(result.user)
-            console.log(result.user)
-            Swal.fire({
-             icon: 'success',
-             title: 'Registration  Succesful',
-             showConfirmButton: false,
-             timer: 1500
-           })
+         //  navigate(location?.state ? location.state : '/');
+         //   console.log(result.user)
+           
+          //   Swal.fire({
+          //    icon: 'success',
+          //    title: 'Registration  Succesful',
+          //    showConfirmButton: false,
+          //    timer: 1500
+          //  })
+           
+          //  const newUser = userCredential.user;
+          //  setUser(newUser);
+          //  return newUser; 
 
-        })
+      //    })
+       //  create user
+       createUser(email,password)
+       .then(result=>{
+          // navigate after login
+          navigate(location?.state ? location.state : '/');
+           console.log(result.user)
+           console.log(result.user)
+           Swal.fire({
+            icon: 'success',
+            title: 'Registration  Succesful',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+       })
         .catch(error=>{
           console.error(error)
           setRegisterError(error.message);
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Unsuccesful Registration',
-           
-          })
+         
         
         } )
+       
 
 }
     return (

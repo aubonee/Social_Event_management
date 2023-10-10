@@ -56,9 +56,9 @@ const Navbar = () => {
 <div className="navbar-end">
  
 <div className="flex">
-<div>
+<div className="flex ">
       {
-        user && <div className="flex"> <div><img className=" w-[30px] h-[30px] rounded-full" src={user.photoURL} alt="" /></div> <div>{user.displayName}  {user.email} </div> </div> 
+        user && <div className="flex  items-center"> <div><img className=" w-[30px] h-[30px] rounded-full" src={user.photoURL} alt="" /></div> <div>{user.displayName} </div> </div> 
       }
     </div>
  <div>

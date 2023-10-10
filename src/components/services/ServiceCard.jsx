@@ -16,8 +16,8 @@ const ServiceCard = ({service}) => {
   </div>
   <div className="text-white ml-5 flex flex-col"> 
   <div className="py-1"><h5 className=" block font-sans text-xl font-semibold mx-2 mb-2" >{name}</h5></div>
-  <div className="py-1"><p>{subtitle}</p></div>
-  <div > <p className=" block font-sans text-xl font-semibold mx-2 mb-2">{price}</p></div>
+  <div className="py-1 ml-2"><p>{subtitle}</p></div>
+  <div className='my-2'> <p className="my-2  inline py-1 px-2 text-[#FFFFFA] rounded-xl bg-[#702632] font-sans text-xl font-semibold mx-2 mb-2">{price}</p></div>
 
 <div>  <Link to={`/service/${id}`} relative="path"><button  className="btn ml-3 rounded-none bg-[#912F40] border-2 border-spacing-y-3 border-spacing-x-7 text-[#FFFFFA] border-[#FFFFFA]"> View Details</button></Link> 
 </div></div>
