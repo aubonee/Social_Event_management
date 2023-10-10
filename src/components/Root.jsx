@@ -11,6 +11,7 @@ import Contact from "../pages/contact/Contact";
 import WhyChooseUs from "./whyChooseUs/WhyChooseUs";
 import Blogs from "../pages/blog/Blogs";
 import BlogLayout from "../pages/blog/BlogLayout";
+import Review from "./Reviews/Review";
         
 const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
           element: <Register></Register>,
         },
         {
+          path: "/Review",
+          element: <Review></Review>,
+        },
+        {
             path :"/service/:id",
             element : <PrivateRoute><ServiceDetail></ServiceDetail></PrivateRoute>,
             loader : ()=> fetch('/service.json'),
@@ -47,7 +52,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/Blogs",
-          element: <BlogLayout></BlogLayout>,
+          element: <PrivateRoute><BlogLayout></BlogLayout></PrivateRoute>,
           loader : ()=> fetch('/blog.json'),
          
         },

@@ -1,28 +1,14 @@
-// import React, { useEffect, useState } from 'react';
-// import { useLoaderData, useParams } from 'react-router-dom';
-// import WhyChooseCard from './WhyChooseCard';
+import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const WhyChooseUs = () => {
-    // const [detail, setdetail] = useState({});
-
-
-    // const {id}=useParams();
-  
-    // const details = useLoaderData();
-    // console.log("Detail")
-    // console.log(details);
-  
-    // useEffect(() => {
-  
-    //   const finddetail = details?.find(detail => detail.id === id);
-  
-    //   setdetail(finddetail);
-    // }, [id,detail]);
+   
     return (
         <div className=' flex flex-col justify-center items-center ' >
-            <h2 className='font-extrabold text-black text-4xl py-10'>Why Choose <span className='text-[#702632]'>Eventz</span></h2>
+            <h2 data-aos="fade-right"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000" className='font-extrabold text-black text-4xl py-10'>Why Choose <span className='text-[#702632]'>Eventz</span></h2>
           <div className=' w-11/12'>
-          <div className='  grid grid-cols-1 lg:grid-cols-3 gap-3'>
+          <div data-aos="fade-up"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000" className='  grid grid-cols-1 lg:grid-cols-3 gap-3'>
                 
           <div className='flex  flex-col border-2 border-[#702632] rounded-xl px-10 py-5'>
                     <div className='flex justify-center items-center  mr-6'>

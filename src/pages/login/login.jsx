@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import GoogleLogin from './googleLogin';
 import Swal from 'sweetalert2';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const login = () => {
 
@@ -52,10 +54,10 @@ const login = () => {
             <div className="hero min-h-screen ">
   <div className="hero-content flex-col ">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl text-[#702632] font-bold text-center">Login now!</h1>
+      <h1 data-aos="fade-right"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000" className="text-5xl text-[#702632] font-bold text-center">Login now!</h1>
   
     </div>
-    <div className="card mx-24 flex-shrink-0 w-full  shadow-2xl bg-base-100">
+    <div data-aos="fade-down"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000" className="card mx-24 flex-shrink-0 w-full  shadow-2xl bg-base-100">
       <form  onSubmit={handleLogin} className="card-body ">
         <div className="form-control">
           <label className="label">

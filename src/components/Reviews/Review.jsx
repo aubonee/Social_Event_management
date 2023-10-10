@@ -1,10 +1,12 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Review = () => {
     return (
         <div>
-            <div className='mx-auto' ><h1 className=' text-center font-extrabold text-black text-4xl py-10'>Client's <span className='text-[#702632]'> Feedback</span> </h1></div>
-            <div className="carousel w-full">
+            <div data-aos="fade-left"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000" className='mx-auto' ><h1 className=' text-center font-extrabold text-black text-4xl py-10'>Client's <span className='text-[#702632]'> Feedback</span> </h1></div>
+            <div data-aos="fade-up"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000"  className="carousel w-full">
     <div id="item1" className="carousel-item w-full">
     <div className='mx-auto flex flex-col p-10 lg:flex-row-reverse text-white  rounded-none w-11/12 lg:w-3/5 shadow-lg border-2 bg-[#702632]'>
   <div className='w-full lg:w-2/4 flex justify-center items-center  mr-6'>
