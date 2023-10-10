@@ -78,9 +78,9 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A
 
-<i>Write your explanation here</i>
+<i>The info.favoriteFood = "🍝" changes the value of the favoriteFood property in the info object, but it doesn't modify the original food array. </i>
 
 </p>
 </details>
@@ -103,9 +103,9 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: B
 
-<i>Write your explanation here</i>
+<i>when the function sayHi is called it expects an argument,but there don't have.Thats why it will show undefined</i>
 
 </p>
 </details>
@@ -131,9 +131,9 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C
 
-<i>Write your explanation here</i>
+<i>In loop it the count variable will increment 3 timesfor  1,2 and 3  but not for 0.So the answer is  3.</i>
 
 </p>
 </details>
