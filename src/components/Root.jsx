@@ -10,6 +10,7 @@ import ErrorPage from "../pages/error/ErrorPage";
 import Contact from "../pages/contact/Contact";
 import WhyChooseUs from "./whyChooseUs/WhyChooseUs";
 import Blogs from "../pages/blog/Blogs";
+import BlogLayout from "../pages/blog/BlogLayout";
         
 const router = createBrowserRouter([
     {
@@ -46,7 +47,8 @@ const router = createBrowserRouter([
         },
         {
           path: "/Blogs",
-          element: <Blogs></Blogs>,
+          element: <BlogLayout></BlogLayout>,
+          loader : ()=> fetch('/blog.json'),
          
         },
   
