@@ -1,15 +1,17 @@
 import React from 'react';
 import "./Contact.css"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Contact = () => {
     return (
         <div className='flex flex-col justify-center items-center'>
             <div className=' w-full fixed-background flex flex-col justify-center items-center'>
-            <div className='pt-10 pb-1 text-3xl uppercase text-[#ffff] font-bold'>contact us</div>
-          <div className='pb-10 pt-1 text-xl   font-bold text-[#912F40]'>Keep in Touch</div>
+            <div data-aos="fade-left"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000"  className='pt-10 pb-1 text-3xl uppercase text-[#ffff] font-bold'>contact us</div>
+          <div data-aos="fade-right"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000"  className='pb-10 pt-1 text-xl   font-bold text-[#912F40]'>Keep in Touch</div>
 
             </div>
            
-          <form className='w-3/4 my-12 py-12 px-5 '>
+          <form data-aos="fade-up"  data-aos-easing="ease-out-cubic"  data-aos-duration="2000"  className='w-3/4 my-12 py-12 px-5 '>
             <div className='grid grid-cols-4 gap-4'>
             <div className="form-control col-span-2">
           
